@@ -89,7 +89,8 @@ mv httpx-main httpx
 cd httpx/cmd/httpx 
 go build httpx.go
 mv httpx ../../
-cd .. 
+cd ../../../ 
+pwd
 
 # Install gau
 echo "[+] Instalando Gau"
