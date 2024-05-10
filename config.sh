@@ -83,25 +83,26 @@ mv Sublist3r-master Sublist3r
 
 # Install Httpx
 echo "[+] Instalando Httpx"
-#mkdir httpx
-#cd httpx
 unzip httpx-main.zip
 rm -rf httpx-main.zip
 mv httpx-main httpx
 go build httpx/cmd/httpx/httpx.go
+cd httpx
+mv httpx/cmd/httpx/httpx .
+cd .. 
 
 
-#cd ..
+# Install gau
+echo "[+] Instalando Gau"
+mkdir gau
+mv gau-master.zip gau
+cd gau
+unzip gau-master.zip
+rm gau-master.zip
+mv gau-master gau
+cd .. 
 
-## Install gau
-#echo "[+] Instalando Gau"
-#mkdir gau
-#cd gau
-#tar xvf gau_2.2.1_linux_amd64.tar.gz
-#rm gau_2.2.1_linux_amd64.tar.gz
-#cd ..
-#
-## Install Gf
+# Install Gf
 #echo "[+] Instalando Gf"
 #unzip gf-master.zip
 #rm -rf Gf-Patterns-master.zip
