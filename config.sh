@@ -77,15 +77,15 @@ rm -rf ctfr-master.zip
 echo "[+] Instalando Sublist3r"
 unzip Sublist3r-master.zip
 rm -rf Sublist3r-master.zip
-#
-## Install Httpx
-#echo "[+] Instalando Httpx"
+
+# Install Httpx
+echo "[+] Instalando Httpx"
 #mkdir httpx
 #cd httpx
-#unzip httpx_1.6.0_linux_amd64.zip
-#rm -rf httpx_1.6.0_linux_amd64.zip
+unzip httpx-main.zip
+rm -rf httpx-main.zip
 #cd ..
-#
+
 ## Install gau
 #echo "[+] Instalando Gau"
 #mkdir gau
