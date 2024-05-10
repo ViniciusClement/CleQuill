@@ -67,16 +67,19 @@ cd archives/
 echo "[+] Instalando Sudomy"
 unzip Sudomy-master.zip
 rm -rf Sudomy-master.zip
+mv Sudomy-master Sudomy 
 
 # Install ctfr
 echo "[+] Instalando Ctfr"
 unzip ctfr-master.zip
 rm -rf ctfr-master.zip
+mv ctfr-master ctfr
 
 # Install Sublist3r
 echo "[+] Instalando Sublist3r"
 unzip Sublist3r-master.zip
 rm -rf Sublist3r-master.zip
+mv Sublist3r-master Sublist3r
 
 # Install Httpx
 echo "[+] Instalando Httpx"
@@ -84,6 +87,10 @@ echo "[+] Instalando Httpx"
 #cd httpx
 unzip httpx-main.zip
 rm -rf httpx-main.zip
+mv httpx-main httpx
+go build httpx/cmd/httpx/httpx.go
+
+
 #cd ..
 
 ## Install gau

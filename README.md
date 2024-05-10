@@ -5,9 +5,10 @@
 # Installing 
 
 # 1 - sudo su
-# 2 - pip3 install -r requirements.txt
-# 3 - chmod a+x config.sh
-# 4 - ./config.sh
+# 2 - chmod a+x config.sh
+# 3 - ./config.sh
+# 4 - pip3 install -r requirements.txt
+ 
 
 
  
