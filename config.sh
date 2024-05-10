@@ -67,12 +67,12 @@ cd archives/
 echo "[+] Instalando Sudomy"
 unzip Sudomy-master.zip
 rm -rf Sudomy-master.zip
-#
-## Install ctfr
-#echo "[+] Instalando Ctfr"
-#unzip ctfr-master.zip
-#rm -rf ctfr-master.zip
-#
+
+# Install ctfr
+echo "[+] Instalando Ctfr"
+unzip ctfr-master.zip
+rm -rf ctfr-master.zip
+
 ## Install Sublist3r
 #echo "[+] Instalando Sublist3r"
 #unzip Sublist3r-master.zip
