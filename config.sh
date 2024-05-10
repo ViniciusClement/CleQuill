@@ -119,6 +119,7 @@ cd archives/
 echo "[+] Instalando Aquatone"
 mkdir aquatone
 cd aquatone
+mv aquatone_linux_amd64_1.7.0.zip aquatone
 unzip aquatone_linux_amd64_1.7.0.zip
 rm aquatone_linux_amd64_1.7.0.zip
 cd ..
