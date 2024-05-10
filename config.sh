@@ -73,10 +73,10 @@ echo "[+] Instalando Ctfr"
 unzip ctfr-master.zip
 rm -rf ctfr-master.zip
 
-## Install Sublist3r
-#echo "[+] Instalando Sublist3r"
-#unzip Sublist3r-master.zip
-#rm -rf Sublist3r-master.zip
+# Install Sublist3r
+echo "[+] Instalando Sublist3r"
+unzip Sublist3r-master.zip
+rm -rf Sublist3r-master.zip
 #
 ## Install Httpx
 #echo "[+] Instalando Httpx"
