@@ -106,14 +106,14 @@ echo "[+] Instalando Gf"
 unzip gf-master.zip
 rm gf-master.zip
 cd gf-master
-#go build main.go
-#mv main gf
-#cp gf /usr/bin
-#mkdir /root/.gf/
-#cd examples	
-#cp * /root/.gf/
-#cd ../../
-pwd
+go build main.go
+mv main gf
+cp gf /usr/bin
+mkdir /root/.gf/
+cd examples	
+cp * /root/.gf/
+cd ../../
+mv gf-master gf
 
 # Config. Gf
 #unzip Gf-Patterns-master.zip
