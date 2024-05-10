@@ -82,39 +82,40 @@ cd archives/
 #mv Sublist3r-master Sublist3r
 #
 ## Install Httpx
-echo "[+] Instalando Httpx"
-unzip httpx-main.zip
-rm -rf httpx-main.zip
-mv httpx-main httpx
-cd httpx/cmd/httpx 
-go build httpx.go
-mv httpx ../../
-cd ../../../ 
-pwd
+#echo "[+] Instalando Httpx"
+#unzip httpx-main.zip
+#rm -rf httpx-main.zip
+#mv httpx-main httpx
+#cd httpx/cmd/httpx 
+#go build httpx.go
+#mv httpx ../../
+#cd ../../../ 
 
 # Install gau
-echo "[+] Instalando Gau"
-unzip gau-master.zip
-rm gau-master.zip
-#cd gau-master/gau
-#mv gau-master gau
-#cd .. 
+#echo "[+] Instalando Gau"
+#unzip gau-master.zip
+#rm gau-master.zip
+#cd gau-master/cmd/gau/
+#go build main.go
+#mv main gau
+#mv gau ../../
+#cd ..
 
 # Install Gf
-#echo "[+] Instalando Gf"
-#unzip gf-master.zip
-#rm -rf Gf-Patterns-master.zip
-#cd gf-master
+echo "[+] Instalando Gf"
+unzip gf-master.zip
+rm gf-master.zip
+cd gf-master
 #go build main.go
 #mv main gf
 #cp gf /usr/bin
 #mkdir /root/.gf/
 #cd examples	
 #cp * /root/.gf/
-#cd ..
-#cd ..
-#
-## Config. Gf
+#cd ../../
+pwd
+
+# Config. Gf
 #unzip Gf-Patterns-master.zip
 #rm -rf Gf-Patterns-master.zip
 #cd Gf-Patterns
@@ -122,10 +123,10 @@ rm gau-master.zip
 #cd ..
 
 # Install Aquatone
-echo "[+] Instalando Aquatone"
-unzip aquatone-master.zip
-rm aquatone-master.zip
-cd ..
+#echo "[+] Instalando Aquatone"
+#unzip aquatone-master.zip
+#rm aquatone-master.zip
+#cd ..
 
 ## Install Dirsearch
 #echo "[+] Instalando Dirsearch"
