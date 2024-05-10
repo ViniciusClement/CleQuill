@@ -18,8 +18,7 @@
 # SSRF {Gopherus}
 
 
-
-export CAMINHO="/root"
+export CAMINHO="/home/kali/Desktop"
 echo "PATH: "$CAMINHO
 
 if [ -f Pentest ]; then
@@ -45,11 +44,10 @@ else
    echo "[-] Nao existe google-chrome"
    cd $CAMINHO/archives/
    dpkg -i google-chrome-stable_current_amd64.deb
-   
+
    # Remove google-chrome
    rm -rf google-chrome-stable_current_amd64.deb
 fi
-
 
 # Installing dafault Tools
 apt-get install whatweb -y
