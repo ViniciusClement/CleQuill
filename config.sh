@@ -64,43 +64,40 @@
 cd archives/
 
 # Install Sudomy
-echo "[+] Instalando Sudomy"
-unzip Sudomy-master.zip
-rm -rf Sudomy-master.zip
-mv Sudomy-master Sudomy 
-
-# Install ctfr
-echo "[+] Instalando Ctfr"
-unzip ctfr-master.zip
-rm -rf ctfr-master.zip
-mv ctfr-master ctfr
-
-# Install Sublist3r
-echo "[+] Instalando Sublist3r"
-unzip Sublist3r-master.zip
-rm -rf Sublist3r-master.zip
-mv Sublist3r-master Sublist3r
-
-# Install Httpx
+#echo "[+] Instalando Sudomy"
+#unzip Sudomy-master.zip
+#rm -rf Sudomy-master.zip
+#mv Sudomy-master Sudomy 
+#
+## Install ctfr
+#echo "[+] Instalando Ctfr"
+#unzip ctfr-master.zip
+#rm -rf ctfr-master.zip
+#mv ctfr-master ctfr
+#
+## Install Sublist3r
+#echo "[+] Instalando Sublist3r"
+#unzip Sublist3r-master.zip
+#rm -rf Sublist3r-master.zip
+#mv Sublist3r-master Sublist3r
+#
+## Install Httpx
 echo "[+] Instalando Httpx"
 unzip httpx-main.zip
 rm -rf httpx-main.zip
 mv httpx-main httpx
-go build httpx/cmd/httpx/httpx.go
-cd httpx
-mv httpx/cmd/httpx/httpx .
+cd httpx/cmd/httpx 
+go build httpx.go
+mv httpx ../../
 cd .. 
-
 
 # Install gau
 echo "[+] Instalando Gau"
-mkdir gau
-mv gau-master.zip gau
-cd gau
 unzip gau-master.zip
 rm gau-master.zip
-mv gau-master gau
-cd .. 
+#cd gau-master/gau
+#mv gau-master gau
+#cd .. 
 
 # Install Gf
 #echo "[+] Instalando Gf"
