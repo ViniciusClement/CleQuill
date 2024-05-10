@@ -17,49 +17,50 @@
 # Vulnerability Scanner {Nuclei, Nmap, }
 # SSRF {Gopherus}
 
-
-export CAMINHO="/home/kali/Desktop"
-echo "PATH: "$CAMINHO
-
-if [ -f Pentest ]; then
-   echo "[+] Existe a pasta Pentest"
-else
-	mkdir Pentest
-fi
-
+#
+#export CAMINHO="/home/kali"
+#echo "PATH: "$CAMINHO
+#
+#if [ -f Pentest ]; then
+#   echo "[+] Existe a pasta Pentest"
+#else
+#	mkdir Pentest
+#fi
+#
 # Install Dependecies
-echo "[+] Instalando dependencias"
+#echo "[+] Instalando dependencias"
+#
+#apt-get install python3 -y
+#apt-get install golang -y
+#apt-get install jq -y
+#pip install yagooglesearch
+#
+#google="google-chrome"
+#cd /opt/google/chrome/
+#
+#if [ -f $google ]; then
+#   echo "[+] Existe google-chrome"
+#else
+#   echo "[-] Nao existe google-chrome"
+#   cd $CAMINHO/archives/
+#   dpkg -i google-chrome-stable_current_amd64.deb
+#
+#   # Remove google-chrome
+#   rm -rf google-chrome-stable_current_amd64.deb
+#fi
+#
+## Installing dafault Tools
+#apt-get install whatweb -y
+#apt-get install lbd -y
+#apt-get install wafw00f -y
+#apt-get install nmap -y
+#apt-get install wpscan -y
+#apt-get install nikto -y
+#apt-get install dnsrecon -y
+#pip3 install metafinder --upgrade
+####
 
-apt-get install python3 -y
-apt-get install golang -y
-apt-get install jq -y
-pip install yagooglesearch
-
-google="google-chrome"
-cd /opt/google/chrome/
-
-if [ -f $google ]; then
-   echo "[+] Existe google-chrome"
-else
-   echo "[-] Nao existe google-chrome"
-   cd $CAMINHO/archives/
-   dpkg -i google-chrome-stable_current_amd64.deb
-
-   # Remove google-chrome
-   rm -rf google-chrome-stable_current_amd64.deb
-fi
-
-# Installing dafault Tools
-apt-get install whatweb -y
-apt-get install lbd -y
-apt-get install wafw00f -y
-apt-get install nmap -y
-apt-get install wpscan -y
-apt-get install nikto -y
-apt-get install dnsrecon -y
-pip3 install metafinder --upgrade
-
-cd $CAMINHO/archives
+cd archives/
 
 # Install Sudomy
 echo "[+] Instalando Sudomy"
