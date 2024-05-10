@@ -63,10 +63,10 @@
 
 cd archives/
 
-## Install Sudomy
-#echo "[+] Instalando Sudomy"
-#unzip Sudomy-master.zip
-#rm -rf Sudomy-master.zip
+# Install Sudomy
+echo "[+] Instalando Sudomy"
+unzip Sudomy-master.zip
+rm -rf Sudomy-master.zip
 #
 ## Install ctfr
 #echo "[+] Instalando Ctfr"
