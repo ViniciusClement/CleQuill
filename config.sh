@@ -125,8 +125,12 @@ cd archives/
 
 # Install Aquatone
 echo "[+] Instalando Aquatone"
-unzip aquatone-master.zip
-rm aquatone-master.zip
+mkdir aquatone
+cd aquatone
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone_linux_amd64_1.7.0.zip
+#unzip aquatone-master.zip
+#rm aquatone-master.zip
 cd ..
 
 ## Install Dirsearch
