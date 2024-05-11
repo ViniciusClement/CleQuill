@@ -102,32 +102,32 @@ cd archives/
 #cd ..
 
 # Install Gf
-echo "[+] Instalando Gf"
-unzip gf-master.zip
-rm gf-master.zip
-cd gf-master
-go build main.go
-mv main gf
-cp gf /usr/bin
-mkdir /root/.gf/
-cd examples	
-cp * /root/.gf/
-cd ../../
-mv gf-master gf
+#echo "[+] Instalando Gf"
+#unzip gf-master.zip
+#rm gf-master.zip
+#cd gf-master
+#go build main.go
+#mv main gf
+#cp gf /usr/bin
+#mkdir /root/.gf/
+#cd examples	
+#cp * /root/.gf/
+#cd ../../
+#mv gf-master gf
 
 # Config. Gf
-unzip Gf-Patterns-master.zip
-rm -rf Gf-Patterns-master.zip
-mv Gf-Patterns-master Gf-Patterns 
-cd Gf-Patterns
-cp * /root/.gf/
-cd ..
+#unzip Gf-Patterns-master.zip
+#rm -rf Gf-Patterns-master.zip
+#mv Gf-Patterns-master Gf-Patterns 
+#cd Gf-Patterns
+#cp * /root/.gf/
+#cd ..
 
 # Install Aquatone
-#echo "[+] Instalando Aquatone"
-#unzip aquatone-master.zip
-#rm aquatone-master.zip
-#cd ..
+echo "[+] Instalando Aquatone"
+unzip aquatone-master.zip
+rm aquatone-master.zip
+cd ..
 
 ## Install Dirsearch
 #echo "[+] Instalando Dirsearch"
