@@ -187,23 +187,21 @@ cd archives/
 #mv CloudFlair-master CloudFlair
 
 # Install H8mail
-echo "[+] Instalando H8mail"
-unzip h8mail-master.zip
-rm h8mail-master.zip
-mv h8mail-master h8mail
-cd h8mail
-make install
-cd ..
+#echo "[+] Instalando H8mail"
+#unzip h8mail-master.zip
+#rm h8mail-master.zip
+#mv h8mail-master h8mail
+#cd h8mail
+#make install
+#cd ..
 
-## Install LinkFinder
-#echo "[+] Instalando LinkFinder"
-#unzip LinkFinder-master.zip
-#rm -rf LinkFinder-master.zip
-#
-## Install MetaFinder
-#unzip LinkFinder-master.zip
-#rm -rf LinkFinder-master.zip
-#
+
+# Install MetaFinder
+echo "[+] Instalando MetaFinder"
+unzip MetaFinder-main.zip
+rm MetaFinder-main.zip
+mv MetaFinder-main MetaFinder
+
 ## Install Imperva-detect
 #unzip imperva-detect-master.zip
 #rm -rf imperva-detect-master.zip
