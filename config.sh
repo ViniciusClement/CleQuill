@@ -166,24 +166,26 @@ cd archives/
 #mv pagodo-master pagodo
 
 # Install EmailHarvester
-echo "[+] Instalando EmailHarvester"
-mkdir Emailharvester
-apt-get install emailharvester -y
+#echo "[+] Instalando EmailHarvester"
+#mkdir Emailharvester
+#apt-get install emailharvester -y
 
 ## Install Go-Dork
-echo "[+] Instalando Go-Dork"
-unzip go-dork-master.zip
-rm go-dork-master.zip
-mv go-dork-master go-dork
-cd go-dork
-mkdir output
-cd ..
+#echo "[+] Instalando Go-Dork"
+#unzip go-dork-master.zip
+#rm go-dork-master.zip
+#mv go-dork-master go-dork
+#cd go-dork
+#mkdir output
+#go build 
+#cd ..
 
-## Install CloudFlair
-#echo "[+] Instalando CloudFlair"
-#unzip CloudFlair-master.zip
-#rm -rf CloudFlair-master.zip
-#
+# Install CloudFlair
+echo "[+] Instalando CloudFlair"
+unzip CloudFlair-master.zip
+rm -rf CloudFlair-master.zip
+mv CloudFlair-master CloudFlair
+
 ## Install H8mail
 #echo "[+] Instalando H8mail"
 #unzip h8mail-2.5.6.zip
