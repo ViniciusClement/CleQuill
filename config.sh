@@ -124,20 +124,20 @@ cd archives/
 #cd ..
 
 # Install Aquatone
-echo "[+] Instalando Aquatone"
-mkdir aquatone
-cd aquatone
-wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
-unzip aquatone_linux_amd64_1.7.0.zip
-#unzip aquatone-master.zip
-#rm aquatone-master.zip
-cd ..
+#echo "[+] Instalando Aquatone"
+#mkdir aquatone
+#cd aquatone
+#wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+#unzip aquatone_linux_amd64_1.7.0.zip
+#cp aquatone /usr/bin/
+#rm aquatone_linux_amd64_1.7.0.zip
+#cd ..
 
 ## Install Dirsearch
-#echo "[+] Instalando Dirsearch"
-#unzip dirsearch-master.zip
-#rm -rf dirsearch-master.zip
-#
+echo "[+] Instalando Dirsearch"
+unzip dirsearch-master.zip
+rm -rf dirsearch-master.zip
+
 ## Copy Gau to bin 
 #cd gau/
 #cp gau /usr/bin
