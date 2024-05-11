@@ -107,7 +107,7 @@ cd ..
 # Install Gf
 echo "[+] Instalando Gf"
 unzip gf-master.zip
-rm gf-master.zip
+rm -rf gf-master.zip
 cd gf-master
 go build main.go
 mv main gf
