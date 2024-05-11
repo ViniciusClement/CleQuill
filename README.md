@@ -7,16 +7,17 @@ The CleQuill tool uses a set of more than +20 other tools using the best of each
 # How to install? 
 ```
 1. sudo su
-2. chmod a+x config.sh
-3. ./config.sh
-4. pip3 install -r requirements.txt
-
+2. git clone https://github.com/ViniciusClement/CleQuill.git
+3. cd CleQuill
+4. chmod a+x config.sh
+5. ./config.sh
+6. pip3 install -r requirements.txt
 ```
 
 # How to run?
 ```
-1. chmod a+x CleQuill.sh
-2. ./CleQuill.sh
+1. chmod a+x clequill.sh
+2. ./clequill.sh
 
 ```
 

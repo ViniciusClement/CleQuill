@@ -196,19 +196,23 @@ cd archives/
 #cd ..
 
 # Install MetaFinder
-echo "[+] Instalando MetaFinder"
-mkdir MetaFinder 
-pip3 install metafinder --upgrade
+#echo "[+] Instalando MetaFinder"
+#mkdir MetaFinder 
+#pip3 install metafinder --upgrade
 
 # Install Imperva-detect
-unzip imperva-detect-master.zip
-rm imperva-detect-master.zip
-mv imperva-detect-master imperva-detect
-cd imperva-detect
-chmod a+x check_ciphers.sh
-chmod a+x imperva-detect.sh
-cd ..
+#unzip imperva-detect-master.zip
+#rm imperva-detect-master.zip
+#mv imperva-detect-master imperva-detect
+#cd imperva-detect
+#chmod a+x check_ciphers.sh
+#chmod a+x imperva-detect.sh
+#cd ..
 
+# Install Enumerepo
+unzip enumerepo-main.zip
+mv enumerepo-main enumerepo
+rm enumerepo-main.zip
 
 
 ## Testing tools
