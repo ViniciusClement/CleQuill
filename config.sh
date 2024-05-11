@@ -99,8 +99,7 @@ cd gau-master/cmd/gau/
 go build main.go
 mv main gau
 mv gau ../../
-cd ..
-cd gau/
+cd ../../
 cp gau /usr/bin
 cd ..
 
