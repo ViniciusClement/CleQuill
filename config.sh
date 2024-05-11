@@ -118,15 +118,16 @@ mv gf-master gf
 # Config. Gf
 unzip Gf-Patterns-master.zip
 rm -rf Gf-Patterns-master.zip
+mv Gf-Patterns-master Gf-Patterns 
 cd Gf-Patterns
 cp * /root/.gf/
 cd ..
 
 # Install Aquatone
-echo "[+] Instalando Aquatone"
-unzip aquatone-master.zip
-rm aquatone-master.zip
-cd ..
+#echo "[+] Instalando Aquatone"
+#unzip aquatone-master.zip
+#rm aquatone-master.zip
+#cd ..
 
 ## Install Dirsearch
 #echo "[+] Instalando Dirsearch"
