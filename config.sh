@@ -160,28 +160,25 @@ cd archives/
 #cd ..
 
 # Install Pagodo
-echo "[+] Instalando Pagodo"
-unzip pagodo-master.zip
-rm pagodo-master.zip
-mv pagodo-master pagodo
-#tar xvzf pagodo-2.6.2.tar.gz
-#mv pagodo-2.6.2 pagodo  
-#rm -rf pagodo-2.6.2.tar.gz
+#echo "[+] Instalando Pagodo"
+#unzip pagodo-master.zip
+#rm pagodo-master.zip
+#mv pagodo-master pagodo
 
 # Install EmailHarvester
-#echo "[+] Instalando EmailHarvester"
-#mkdir Emailharvester
-#apt-get install emailharvester -y
-#
+echo "[+] Instalando EmailHarvester"
+mkdir Emailharvester
+apt-get install emailharvester -y
+
 ## Install Go-Dork
-#echo "[+] Instalando Go-Dork"
-#mkdir go-dork
-#mv go-dork_1.0.3_linux_amd64 go-dork
-#cd go-dork
-#chmod u+x go-dork_1.0.3_linux_amd64
-#mkdir output
-#cd ..
-#
+echo "[+] Instalando Go-Dork"
+unzip go-dork-master.zip
+rm go-dork-master.zip
+mv go-dork-master go-dork
+cd go-dork
+mkdir output
+cd ..
+
 ## Install CloudFlair
 #echo "[+] Instalando CloudFlair"
 #unzip CloudFlair-master.zip
