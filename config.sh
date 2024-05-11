@@ -64,86 +64,86 @@
 cd archives/
 
 # Install Sudomy
-#echo "[+] Instalando Sudomy"
-#unzip Sudomy-master.zip
-#rm -rf Sudomy-master.zip
-#mv Sudomy-master Sudomy 
-#
-## Install ctfr
-#echo "[+] Instalando Ctfr"
-#unzip ctfr-master.zip
-#rm -rf ctfr-master.zip
-#mv ctfr-master ctfr
-#
-## Install Sublist3r
-#echo "[+] Instalando Sublist3r"
-#unzip Sublist3r-master.zip
-#rm -rf Sublist3r-master.zip
-#mv Sublist3r-master Sublist3r
-#
-## Install Httpx
-#echo "[+] Instalando Httpx"
-#unzip httpx-main.zip
-#rm -rf httpx-main.zip
-#mv httpx-main httpx
-#cd httpx/cmd/httpx 
-#go build httpx.go
-#mv httpx ../../
-#cd ../../../ 
+echo "[+] Instalando Sudomy"
+unzip Sudomy-master.zip
+rm -rf Sudomy-master.zip
+mv Sudomy-master Sudomy 
+
+# Install ctfr
+echo "[+] Instalando Ctfr"
+unzip ctfr-master.zip
+rm -rf ctfr-master.zip
+mv ctfr-master ctfr
+
+# Install Sublist3r
+echo "[+] Instalando Sublist3r"
+unzip Sublist3r-master.zip
+rm -rf Sublist3r-master.zip
+mv Sublist3r-master Sublist3r
+
+# Install Httpx
+echo "[+] Instalando Httpx"
+unzip httpx-main.zip
+rm -rf httpx-main.zip
+mv httpx-main httpx
+cd httpx/cmd/httpx 
+go build httpx.go
+mv httpx ../../
+cd ../../../ 
 
 # Install gau
-#echo "[+] Instalando Gau"
-#unzip gau-master.zip
-#rm gau-master.zip
-#cd gau-master/cmd/gau/
-#go build main.go
-#mv main gau
-#mv gau ../../
-#cd ..
+echo "[+] Instalando Gau"
+unzip gau-master.zip
+rm gau-master.zip
+cd gau-master/cmd/gau/
+go build main.go
+mv main gau
+mv gau ../../
+cd ..
+cd gau/
+cp gau /usr/bin
+cd ..
 
 # Install Gf
-#echo "[+] Instalando Gf"
-#unzip gf-master.zip
-#rm gf-master.zip
-#cd gf-master
-#go build main.go
-#mv main gf
-#cp gf /usr/bin
-#mkdir /root/.gf/
-#cd examples	
-#cp * /root/.gf/
-#cd ../../
-#mv gf-master gf
+echo "[+] Instalando Gf"
+unzip gf-master.zip
+rm gf-master.zip
+cd gf-master
+go build main.go
+mv main gf
+cp gf /usr/bin
+mkdir /root/.gf/
+cd examples	
+cp * /root/.gf/
+cd ../../
+mv gf-master gf
 
 # Config. Gf
-#unzip Gf-Patterns-master.zip
-#rm -rf Gf-Patterns-master.zip
-#mv Gf-Patterns-master Gf-Patterns 
-#cd Gf-Patterns
-#cp * /root/.gf/
-#cd ..
+unzip Gf-Patterns-master.zip
+rm -rf Gf-Patterns-master.zip
+mv Gf-Patterns-master Gf-Patterns 
+cd Gf-Patterns
+cp * /root/.gf/
+cd ..
 
 # Install Aquatone
-#echo "[+] Instalando Aquatone"
-#mkdir aquatone
-#cd aquatone
-#wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
-#unzip aquatone_linux_amd64_1.7.0.zip
-#cp aquatone /usr/bin/
-#rm aquatone_linux_amd64_1.7.0.zip
-#cd ..
+echo "[+] Instalando Aquatone"
+mkdir aquatone
+cd aquatone
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone_linux_amd64_1.7.0.zip
+cp aquatone /usr/bin/
+rm aquatone_linux_amd64_1.7.0.zip
+cd ..
 
-## Install Dirsearch
+# Install Dirsearch
 echo "[+] Instalando Dirsearch"
 unzip dirsearch-master.zip
 rm -rf dirsearch-master.zip
+mv dirsearch-master dirsearch
 
-## Copy Gau to bin 
-#cd gau/
-#cp gau /usr/bin
-#cd ..
-#
-## Install SecretFinder
+
+# Install SecretFinder
 #echo "[+] Instalando SecretFinder"
 #unzip SecretFinder-master.zip
 #rm -rf SecretFinder-master.zip
