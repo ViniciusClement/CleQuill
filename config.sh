@@ -213,6 +213,9 @@ cd archives/
 unzip enumerepo-main.zip
 mv enumerepo-main enumerepo
 rm enumerepo-main.zip
+cd enumerepo
+go build
+cd ..
 
 
 ## Testing tools
