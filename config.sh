@@ -151,6 +151,7 @@ mv SecretFinder-master SecretFinder
 echo "[+] Instalando Yagooglesearch"
 unzip yagooglesearch-master.zip
 rm -rf yagooglesearch-master.zip
+mv yagooglesearch-master yagooglesearch
 cd yagooglesearch
 virtualenv -p python3 .venv  # If using a virtual environment.
 source .venv/bin/activate  # If using a virtual environment.
