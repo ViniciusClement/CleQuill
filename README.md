@@ -12,4 +12,35 @@ The CleQuill tool uses a set of more than +20 other tools using the best of each
 4. pip3 install -r requirements.txt
 
 ```
+
+# How to run?
+```
+1. chmod a+x CleQuill.sh
+2. ./CleQuill.sh
+
+```
+
+# References tools
+```
+Aquatone: https://github.com/michenriksen/aquatone
+CloudFlair: https://github.com/christophetd/CloudFlair
+Ctfr: https://github.com/UnaPibaGeek/ctfr
+Dirsearch: https://github.com/maurosoria/dirsearch
+Gau: https://github.com/lc/gau
+Gf: https://github.com/tomnomnom/gf
+Gf-Patterns: https://github.com/1ndianl33t/Gf-Patterns
+H8mail: https://github.com/khast3x/h8mail
+Httpx: https://github.com/projectdiscovery/httpx
+Imperva-detect: https://github.com/vmfae-iscteiulpt/imperva-detect
+MetaFinder: https://github.com/Josue87/MetaFinder
+Pagodo: https://github.com/opsdisk/pagodo
+SecretFinder: https://github.com/m4ll0k/SecretFinder
+SubList3r: https://github.com/aboul3la/Sublist3r
+Sudomy: https://github.com/screetsec/Sudomy/
+Yagooglesearch: https://github.com/opsdisk/yagooglesearch
+Go-Dork: https://github.com/dwisiswant0/go-dork/
+
+```
+
+
  

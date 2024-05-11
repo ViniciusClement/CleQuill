@@ -195,19 +195,20 @@ cd archives/
 #make install
 #cd ..
 
-
 # Install MetaFinder
 echo "[+] Instalando MetaFinder"
-unzip MetaFinder-main.zip
-rm MetaFinder-main.zip
-mv MetaFinder-main MetaFinder
+mkdir MetaFinder 
+pip3 install metafinder --upgrade
 
-## Install Imperva-detect
-#unzip imperva-detect-master.zip
-#rm -rf imperva-detect-master.zip
-#cd imperva-detect-master
-#chmod +x check_ciphers.sh
-#chmod +x imperva-detect.sh
+# Install Imperva-detect
+unzip imperva-detect-master.zip
+rm imperva-detect-master.zip
+mv imperva-detect-master imperva-detect
+cd imperva-detect
+chmod a+x check_ciphers.sh
+chmod a+x imperva-detect.sh
+cd ..
+
 
 
 ## Testing tools
