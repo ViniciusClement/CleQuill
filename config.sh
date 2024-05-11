@@ -181,19 +181,20 @@ cd archives/
 #cd ..
 
 # Install CloudFlair
-echo "[+] Instalando CloudFlair"
-unzip CloudFlair-master.zip
-rm -rf CloudFlair-master.zip
-mv CloudFlair-master CloudFlair
+#echo "[+] Instalando CloudFlair"
+#unzip CloudFlair-master.zip
+#rm -rf CloudFlair-master.zip
+#mv CloudFlair-master CloudFlair
 
-## Install H8mail
-#echo "[+] Instalando H8mail"
-#unzip h8mail-2.5.6.zip
-#rm -rf h8mail-2.5.6.zip
-#cd h8mail-2.5.6
-#make install
-#cd ..
-#
+# Install H8mail
+echo "[+] Instalando H8mail"
+unzip h8mail-master.zip
+rm h8mail-master.zip
+mv h8mail-master h8mail
+cd h8mail
+make install
+cd ..
+
 ## Install LinkFinder
 #echo "[+] Instalando LinkFinder"
 #unzip LinkFinder-master.zip
