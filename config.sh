@@ -142,30 +142,33 @@ cd archives/
 #mv dirsearch-master dirsearch
 
 # Install SecretFinder
-echo "[+] Instalando SecretFinder"
-unzip SecretFinder-master.zip
-rm -rf SecretFinder-master.zip
-mv SecretFinder-master SecretFinder 
+#echo "[+] Instalando SecretFinder"
+#unzip SecretFinder-master.zip
+#rm -rf SecretFinder-master.zip
+#mv SecretFinder-master SecretFinder 
 
 # Install yagooglesearch
-echo "[+] Instalando Yagooglesearch"
-unzip yagooglesearch-master.zip
-rm -rf yagooglesearch-master.zip
-mv yagooglesearch-master yagooglesearch
-cd yagooglesearch
-virtualenv -p python3 .venv  # If using a virtual environment.
-source .venv/bin/activate  # If using a virtual environment.
-pip install .  # Reads from pyproject.toml
-source desactivate
-cd ..
+#echo "[+] Instalando Yagooglesearch"
+#unzip yagooglesearch-master.zip
+#rm -rf yagooglesearch-master.zip
+#mv yagooglesearch-master yagooglesearch
+#cd yagooglesearch
+#virtualenv -p python3 .venv  # If using a virtual environment.
+#source .venv/bin/activate  # If using a virtual environment.
+#pip install .  # Reads from pyproject.toml
+#source desactivate
+#cd ..
 
-## Install Pagodo
-#echo "[+] Instalando Pagodo"
+# Install Pagodo
+echo "[+] Instalando Pagodo"
+unzip pagodo-master.zip
+rm pagodo-master.zip
+mv pagodo-master pagodo
 #tar xvzf pagodo-2.6.2.tar.gz
 #mv pagodo-2.6.2 pagodo  
 #rm -rf pagodo-2.6.2.tar.gz
-#
-## Install EmailHarvester
+
+# Install EmailHarvester
 #echo "[+] Instalando EmailHarvester"
 #mkdir Emailharvester
 #apt-get install emailharvester -y
