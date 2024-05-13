@@ -42,8 +42,8 @@ if [ -f $google ]; then
 else
    echo "[-] Nao existe google-chrome"
    cd $CAMINHO/archives/
+   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
    dpkg -i google-chrome-stable_current_amd64.deb
-
    # Remove google-chrome
    rm -rf google-chrome-stable_current_amd64.deb
 fi
@@ -59,8 +59,9 @@ apt-get install dnsrecon -y
 pip3 install metafinder --upgrade
 sudo apt-get install p7zip-full
 
+pwd
 cd $CAMINHO/archives/
-
+pwd
 # Install Sudomy
 echo "[+] Instalando Sudomy"
 unzip Sudomy-master.zip
