@@ -17,9 +17,8 @@
 # Vulnerability Scanner {Nuclei, Nmap, }
 # SSRF {Gopherus}
 
-#
-#export CAMINHO="/home/kali"
-#echo "PATH: "$CAMINHO
+export CAMINHO="$HOME/CleQuill"
+echo "PATH: "$CAMINHO
 
 if [ -f Pentest ]; then
    echo "[+] Existe a pasta Pentest"
@@ -60,7 +59,7 @@ apt-get install dnsrecon -y
 pip3 install metafinder --upgrade
 sudo apt-get install p7zip-full
 
-cd archives/
+cd $CAMINHO/archives/
 
 # Install Sudomy
 echo "[+] Instalando Sudomy"

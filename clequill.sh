@@ -3,22 +3,15 @@
 # Created by Vinicius Clemente
 # Automation script pentest tools
 
-echo "##########################################"
-echo "			CLEQUILL TOOL		"
-echo "##########################################"
-
-
-#export CAMINHO="/root"
-#echo "PATH: "$CAMINHO
-
-#cd $CAMINHO
-#cd pentest
+echo "###########################"
+echo "	CLEQUILL TOOL			"
+echo "###########################"
 
 echo "##########################"
 echo "	Testing Tools			"
 echo "##########################"
 
-cd archives
+cd $CAMINHO/archives
 
 cd Sudomy
 ./sudomy -h
@@ -72,7 +65,6 @@ metafinder -h
 
 cd enumrepo
 ./enumrepo -h 
-
 
 #__Main__
 #cd ..
