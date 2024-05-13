@@ -11,7 +11,7 @@ echo "##########################"
 echo "	Testing Tools			"
 echo "##########################"
 
-cd $CAMINHO/archives/
+cd archives/
 
 cd Sudomy
 ./sudomy -h
