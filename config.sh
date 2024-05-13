@@ -60,11 +60,10 @@ pip3 install metafinder --upgrade
 sudo apt-get install p7zip-full
 
 pwd
-cd $CAMINHO/archives/
+cd $CAMINHO
+cd archives/
 pwd
-echo $CAMINHO
-cd $CAMINHO/archives
-pwd
+ls
 
 # Install Sudomy
 #echo "[+] Instalando Sudomy"
