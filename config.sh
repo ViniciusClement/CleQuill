@@ -17,7 +17,7 @@
 # Vulnerability Scanner {Nuclei, Nmap, }
 # SSRF {Gopherus}
 
-export CAMINHO="$HOME/CleQuill"
+export CAMINHO="/home/CleQuill/"
 echo "PATH: "$CAMINHO
 
 if [ -f Pentest ]; then
@@ -60,9 +60,9 @@ fi
 #sudo apt-get install p7zip-full
 
 cd $CAMINHO
-cd archives/
 echo "$ls"
 pwd
+
 # Install Sudomy
 #echo "[+] Instalando Sudomy"
 #unzip Sudomy-master.zip
