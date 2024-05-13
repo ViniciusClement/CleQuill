@@ -59,12 +59,10 @@ fi
 #pip3 install metafinder --upgrade
 #sudo apt-get install p7zip-full
 
-pwd
 cd $CAMINHO
 cd archives/
+echo "$ls"
 pwd
-ls
-
 # Install Sudomy
 #echo "[+] Instalando Sudomy"
 #unzip Sudomy-master.zip
