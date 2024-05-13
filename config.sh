@@ -49,15 +49,15 @@ else
 fi
 
 # Installing dafault Tools
-apt-get install whatweb -y
-apt-get install lbd -y
-apt-get install wafw00f -y
-apt-get install nmap -y
-apt-get install wpscan -y
-apt-get install nikto -y
-apt-get install dnsrecon -y
-pip3 install metafinder --upgrade
-sudo apt-get install p7zip-full
+#apt-get install whatweb -y
+#apt-get install lbd -y
+#apt-get install wafw00f -y
+#apt-get install nmap -y
+#apt-get install wpscan -y
+#apt-get install nikto -y
+#apt-get install dnsrecon -y
+#pip3 install metafinder --upgrade
+#sudo apt-get install p7zip-full
 
 pwd
 cd $CAMINHO
