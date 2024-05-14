@@ -29,7 +29,7 @@ fi
 # Install Dependecies
 echo "[+] Instalando dependencias"
 
-apt-get install python3 -ys
+apt-get install python3 -y
 apt-get install golang -y
 apt-get install jq -y
 pip install yagooglesearch
@@ -73,7 +73,7 @@ echo "[+] Instalando Ctfr"
 unzip ctfr-master.zip
 rm -rf ctfr-master.zip
 mv ctfr-master ctfr
-s
+
 # Install Sublist3r
 echo "[+] Instalando Sublist3r"
 unzip Sublist3r-master.zip

@@ -67,7 +67,6 @@ cd enumerepo
 ./enumerepo -h 
 cd ../../
 
-pwds
 #__Main__
 #cd ..
 pwd
@@ -113,61 +112,63 @@ if [ "$option" -eq 1 ]; then
 	./sudomy -d $domain -o sudomy_$domain
 	cd sudomy_$domain/Sudomy-Output/$domain/
 	pwd
-	#mv subdomain.txt ../../../../../$domain/output/
+	mv subdomain.txt ../../../../Pentest/$domain/output/
 	#echo "[+] Copy file"
 
 	cd ../../../../
 	pwd
 
 #	#Run ctfr
-#	cd ctfr/
-#	echo "##########################"
-#	echo "	Running ctfr		"
-#	echo "##########################"
-#	python3 ctfr.py -d $domain -o ctfr_$domain.txt
-#	mv ctfr_$domain.txt ../../$domain/output/
-#
-#	echo "[+] Copy file"	cd ..#	# Run Sublist3r
-#
-#
+	cd ctfr/
+	cho "##########################"
+	echo "	Running ctfr		"
+	echo "##########################"
+	python3 ctfr.py -d $domain -o ctfr_$domain.txt
+	mv ctfr_$domain.txt ../../Pentest/$domain/output/
+
+	echo "[+] Copy file"	cd ..#	# Run Sublist3r
+
+
 #	cd Sublist3r
-#	echo "##########################"
-#	echo "	Running Sublist3r	"
-#	echo "##########################"
-#	python3 sublist3r.py -d $domain -o sublister_$domain.txt
-#	mv sublister_$domain.txt ../../$domain/output/
-#	echo "[+] Copy file"
-#	cd ..
-#
-#	echo "##########################"
-#	echo "	Running Amass	"
-#	echo "##########################"	
-#	amass enum -passive -d $domain -o amass-$domain.txt
-#
+	echo "##########################"
+	echo "	Running Sublist3r	"
+	echo "##########################"
+	python3 sublist3r.py -d $domain -o sublister_$domain.txt
+	mv sublister_$domain.txt ../../Pentest/$domain/output/
+	echo "[+] Copy file"
+	cd ..
+
+	echo "##########################"
+	echo "	Running Amass	"
+	echo "##########################"	
+	amass enum -passive -d $domain -o amass-$domain.txt
+	pwd
+
 #	# Parse output
-#	echo "##########################"
-#	echo "	Parsing output files	"
-#    echo "##########################"	
-#	cd ..
-#	cd $domain
-#	cd output
-#	
-#	cat sublister_$domain.txt | sort | uniq >> tmp_all_$domain.txt
-#	cat ctfr_$domain.txt | sort | uniq >> tmp_all_$domain.txt
-#	cat subdomain.txt | sort | uniq >> tmp_all_$domain.txt
-#	mv tmp_all_$domain.txt all_$domain.txt
-#
-#	# Run HTTPX
-#	echo "##########################"
-#	echo "	Running HTTPX		"
-#	echo "##########################"
-#	cd $CAMINHO
-#	cd tools/httpx
-#	./httpx -l ../../$domain/output/all_$domain.txt  -sc -timeout 15 -cdn -o sc_live_$domain.txt
-#	mv sc_live_$domain.txt ../../$domain/output/
-#	./httpx -l ../../$domain/output/all_$domain.txt -timeout 15 -o live_$domain.txt
-#	mv live_$domain.txt ../../$domain/output
-#
+	echo "##########################"
+	echo "	Parsing output files	"
+    echo "##########################"	
+	cd ..
+	pwd
+	cd Pentest
+	cd $domain/output
+	
+	cat sublister_$domain.txt | sort | uniq >> tmp_all_$domain.txt
+	cat ctfr_$domain.txt | sort | uniq >> tmp_all_$domain.txt
+	cat subdomain.txt | sort | uniq >> tmp_all_$domain.txt
+	mv tmp_all_$domain.txt all_$domain.txt
+
+	# Run HTTPX
+	echo "##########################"
+	echo "	Running HTTPX		"
+	echo "##########################"
+	cd /root/CleQuill/
+	cd archives/httpx
+	./httpx -l ../../Pentest/$domain/output/all_$domain.txt  -sc -timeout 15 -cdn -o sc_live_$domain.txt
+	mv sc_live_$domain.txt ../../Pentest/$domain/output/
+	./httpx -l ../../Pentest/$domain/output/all_$domain.txt -timeout 15 -o live_$domain.txt
+	mv live_$domain.txt ../../Pentest/$domain/output
+
 #	# Remove Temp files
 #	cd $CAMINHO
 #	cd $domain/output
