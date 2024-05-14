@@ -63,9 +63,11 @@ h8mail -h
 
 metafinder -h
 
-cd enumrepo
-./enumrepo -h 
+cd enumerepo
+./enumerepo -h 
+cd ../../
 
+pwds
 #__Main__
 #cd ..
 pwd
@@ -98,32 +100,32 @@ if [ "$option" -eq 1 ]; then
 		mkdir output
 		cd ..
    	fi
-	echo "Execute tool Sudomy, Sublist3r, Ctrf"
 	
-	cd $CAMINHO/archives/
+	cd /home/CleQuill/archives/
 
 	# Run tools
-#	# Sudomy
-#	cd Sudomy/
-#	echo "##########################"
-#	echo "	Running Sudomy		"
-#	echo "##########################"
-#	./sudomy -d $domain -o sudomy_$domain
-#	cd sudomy_$domain/Sudomy-Output/$domain/
-#	mv subdomain.txt ../../../../../$domain/output/
+#	
+	# Sudomy
+	cd Sudomy/
+	echo "##########################"
+	echo "	Running Sudomy		"
+	echo "##########################"
+	./sudomy -d $domain -o sudomy_$domain
+	cd sudomy_$domain/Sudomy-Output/$domain/
+	#mv subdomain.txt ../../../../../$domain/output/
 #	echo "[+] Copy file"
 #
-#	cd ../../../../
+	cd ../../../../
 #
 #	#Run ctfr
-#	cd ctfr/
-#	echo "##########################"
-#	echo "	Running ctfr		"
-#	echo "##########################"
-#	python3 ctfr.py -d $domain -o ctfr_$domain.txt
-#	mv ctfr_$domain.txt ../../$domain/output/
+	cd ctfr/
+	echo "##########################"
+	echo "	Running ctfr		"
+	echo "##########################"
+	python3 ctfr.py -d $domain -o ctfr_$domain.txt
+	#mv ctfr_$domain.txt ../../$domain/output/
 #	echo "[+] Copy file"
-#	cd ..
+	cd ..
 #
 #	# Run Sublist3r
 #	cd Sublist3r
