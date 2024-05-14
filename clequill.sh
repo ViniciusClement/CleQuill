@@ -104,7 +104,7 @@ if [ "$option" -eq 1 ]; then
 	cd /home/CleQuill/archives/
 
 	# Run tools
-#	
+	
 	# Sudomy
 	cd Sudomy/
 	echo "##########################"
@@ -112,22 +112,24 @@ if [ "$option" -eq 1 ]; then
 	echo "##########################"
 	./sudomy -d $domain -o sudomy_$domain
 	cd sudomy_$domain/Sudomy-Output/$domain/
+	pwd
 	#mv subdomain.txt ../../../../../$domain/output/
-#	echo "[+] Copy file"
-#
+	#echo "[+] Copy file"
+
 	cd ../../../../
-#
+	pwd
+
 #	#Run ctfr
-	cd ctfr/
-	echo "##########################"
-	echo "	Running ctfr		"
-	echo "##########################"
-	python3 ctfr.py -d $domain -o ctfr_$domain.txt
-	#mv ctfr_$domain.txt ../../$domain/output/
-#	echo "[+] Copy file"
-	cd ..
+#	cd ctfr/
+#	echo "##########################"
+#	echo "	Running ctfr		"
+#	echo "##########################"
+#	python3 ctfr.py -d $domain -o ctfr_$domain.txt
+#	mv ctfr_$domain.txt ../../$domain/output/
 #
-#	# Run Sublist3r
+#	echo "[+] Copy file"	cd ..#	# Run Sublist3r
+#
+#
 #	cd Sublist3r
 #	echo "##########################"
 #	echo "	Running Sublist3r	"
@@ -145,7 +147,7 @@ if [ "$option" -eq 1 ]; then
 #	# Parse output
 #	echo "##########################"
 #	echo "	Parsing output files	"
-#   echo "##########################"	
+#    echo "##########################"	
 #	cd ..
 #	cd $domain
 #	cd output
@@ -212,12 +214,12 @@ if [ "$option" -eq 1 ]; then
 #	cat gau_$domain.txt | gf ssrf > gf/ssrf_$domain.txt
 #	cat gau_$domain.txt | gf ssti > gf/ssti_$domain.txt
 #
-## Option 2
-#else
-#    	echo -n "[2] - Enter Domain: "
-#    	read domain
-#	
-#
+# Option 2
+else
+    	echo -n "[2] - Enter Domain: "
+    	read domain
+	
+
 #	# Conf. env
 #    	cd $CAMINHO
 #
@@ -401,23 +403,13 @@ if [ "$option" -eq 1 ]; then
 #	echo "##########################"
 #	echo "	Pagodo					"
 #	echo "##########################"
-	#cd $CAMINHO/tools/pagodo/
-	#python pagodo.py -d $domain -g dorks/error_messages.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_error_messages_$domain.txt
-
-	#python pagodo.py -d $domain -g dorks/files_containing_usernames.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_files_containing_usernames_$domain.txt
-
-	#python pagodo.py -d $domain -g dorks/vulnerable_files.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_vulnerable_files_$domain.txt
-
-	#python pagodo.py -d $domain -g dorks/vulnerable_servers.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_vulnerable_servers_$domain.txt
-
-	#python pagodo.py -d $domain -g dorks/web_server_detection.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_web_server_detection_dorks_$domain.txt
-
-	#python pagodo.py -d $domain -g dorks/sensitive_directories.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_sensitive_directories_$domain.txt
-
-#__End__
+##cd $CAMINHO/tools/pagodo/	#python pagodo.py -d $domain -g dorks/error_messages.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_error_messages_$domain.txt
+##python pagodo.py -d $domain -g dorks/files_containing_usernames.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_files_containing_usernames_$domain.txt
+##python pagodo.py -d $domain -g dorks/vulnerable_files.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_vulnerable_files_$domain.txt
+##python pagodo.py -d $domain -g dorks/vulnerable_servers.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_vulnerable_servers_$domain.txt
+##python pagodo.py -d $domain -g dorks/web_server_detection.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_web_server_detection_dorks_$domain.txt
+##python pagodo.py -d $domain -g dorks/sensitive_directories.dorks -l --proxies ../yagooglesearch/proxy2.py --verbosity 3 --verbosity 1 > pagodo_sensitive_directories_$domain.txt#__End__
 fi
-
-
 
 
 

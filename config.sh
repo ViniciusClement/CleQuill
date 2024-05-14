@@ -17,8 +17,6 @@
 # Vulnerability Scanner {Nuclei, Nmap, }
 # SSRF {Gopherus}
 
-export CAMINHO="/home/CleQuill/"
-echo "PATH: "$CAMINHO
 
 if [ -f Pentest ]; then
    echo "[+] Existe a pasta Pentest"
