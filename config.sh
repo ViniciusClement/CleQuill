@@ -56,6 +56,7 @@ apt-get install nmap -y
 apt-get install wpscan -y
 apt-get install nikto -y
 apt-get install dnsrecon -y
+apt-get install amass -y
 pip3 install metafinder --upgrade
 sudo apt-get install p7zip-full
 

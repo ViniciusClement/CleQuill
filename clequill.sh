@@ -77,32 +77,32 @@ echo -n " [2] - Domain"
 echo -n " : "
 read option
 
-# Option 1
-#if [ "$option" -eq 1 ]; then
-#    	echo -n "[1] - Subdomain: "
-#    	read domain
+ Option 1
+if [ "$option" -eq 1 ]; then
+    	echo -n "[1] - Subdomain: "
+    	read domain
 #    
-#    	# Verify Directory
-#    	filename='$domain'
-#
-#    	if [ -d $filename ]; then
-#        	echo 'Existe este diretorio $domain'
-#	else
-#        	echo ".........."
-#        	echo "Criando diretorio '$domain'"
-#        	mkdir $domain
-#        	echo ".........."
-#        	echo "Diretorio criado"
-#        	ls -lt | grep $domain
-#		cd $domain
-#		mkdir output
-#		cd ..
-#   	fi
-#	echo "Execute tool Sudomy, Sublist3r, Ctrf"
-#	
-#	cd tools/
-#
-#	# Run tools
+    	# Verify Directory
+    	filename='$domain'
+
+    	if [ -d $filename ]; then
+        	echo 'Existe este diretorio $domain'
+	else
+        	echo ".........."
+        	echo "Criando diretorio '$domain'"
+        	mkdir $domain
+        	echo ".........."
+        	echo "Diretorio criado"
+        	ls -lt | grep $domain
+		cd $domain
+		mkdir output
+		cd ..
+   	fi
+	echo "Execute tool Sudomy, Sublist3r, Ctrf"
+	
+	cd $CAMINHO/archives/
+
+	# Run tools
 #	# Sudomy
 #	cd Sudomy/
 #	echo "##########################"
@@ -135,10 +135,15 @@ read option
 #	echo "[+] Copy file"
 #	cd ..
 #
+#	echo "##########################"
+#	echo "	Running Amass	"
+#	echo "##########################"	
+#	amass enum -passive -d $domain -o amass-$domain.txt
+#
 #	# Parse output
 #	echo "##########################"
 #	echo "	Parsing output files	"
-#       	echo "##########################"	
+#   echo "##########################"	
 #	cd ..
 #	cd $domain
 #	cd output
