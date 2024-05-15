@@ -211,8 +211,6 @@ else
  	unzip 2.5.6.zip
 	cd h8mail-2.5.6
 	make install
-
-
 fi
 
 #__Main__
@@ -228,93 +226,166 @@ read option
 
 # Option 1
 if [ "$option" -eq 1 ]; then
-    	echo -n "[1] - Subdomain: "
-    	read domain
-    
-    	# Verify Directory
-    	filename='$domain'
+    echo -n "[1] - Subdomain: "
+	read domain
+   	# Verify Directory
+	filename='$domain'
+	echo $filename
 
-    	if [ -d $filename ]; then
-        	echo 'Existe este diretorio $domain'
+	if [ -d $filename ]; then
+		echo 'Existe este diretorio $domain'
 	else
-        	echo ".........."
-        	echo "Criando diretorio '$domain'"
-        	mkdir $domain
-        	echo ".........."
-        	echo "Diretorio criado"
-        	ls -lt | grep $domain
+		echo ".........."
+		echo "Criando diretorio '$domain'"
+		mkdir $domain
+		echo ".........."
+		echo "Diretorio criado"
+		ls -lt | grep $domain
 		cd $domain
 		mkdir output
 		cd ..
-   	fi
-	echo "Execute tool Sudomy, Sublist3r, Ctrf"
+		fi
+		echo "Execute tool Sudomy, Sublist3r, Ctrf"
+		cd tools/
+
+		# Run tools
+		# Sudomy
+		cd Sudomy/
+		echo "##########################"
+		echo "	Running Sudomy		"
+		echo "##########################"
+		./sudomy -d $domain -o sudomy_$domain
+		cd sudomy_$domain/Sudomy-Output/$domain/
+		mv subdomain.txt ../../../../../$domain/output/
+		echo "[+] Copy file"
+
+		cd ../../../../
+
+		#Run ctfr
+		cd ctfr/
+		echo "##########################"
+		echo "	Running ctfr		"
+		echo "##########################"
+		python3 ctfr.py -d $domain -o ctfr_$domain.txt
+		mv ctfr_$domain.txt ../../$domain/output/
+		echo "[+] Copy file"
+		cd ..
+
+		# Run Sublist3r
+		cd Sublist3r
+		echo "##########################"
+		echo "	Running Sublist3r	"
+		echo "##########################"
+		python3 sublist3r.py -d $domain -o sublister_$domain.txt
+		mv sublister_$domain.txt ../../$domain/output/
+		echo "[+] Copy file"
+		cd ..
+
+		# Parse output
+		echo "##########################"
+		echo "	Parsing output files	"
+    	   	echo "##########################"	
+		cd ..
+		cd $domain
+		cd output
+
+		cat sublister_$domain.txt | sort | uniq >> tmp_all_$domain.txt
+		cat ctfr_$domain.txt | sort | uniq >> tmp_all_$domain.txt
+		cat subdomain.txt | sort | uniq >> tmp_all_$domain.txt
+		mv tmp_all_$domain.txt all_$domain.txt
+
+		# Run HTTPX
+		echo "##########################"
+		echo "	Running HTTPX		"
+		echo "##########################"
+		cd $CAMINHO
+		cd tools/httpx
+		./httpx -l ../../$domain/output/all_$domain.txt  -sc -timeout 15 -cdn -o sc_live_$domain.txt
+		mv sc_live_$domain.txt ../../$domain/output/
+		./httpx -l ../../$domain/output/all_$domain.txt -timeout 15 -o live_$domain.txt
+		mv live_$domain.txt ../../$domain/output
+
+		# Remove Temp files
+		cd $CAMINHO
+		cd $domain/output
+
+		rm sublister_$domain.txt
+		rm ctfr_$domain.txt
+		rm subdomain.txt
+
+		# Run aquatone
+		echo "##########################"
+		echo "	Running Aquatone	"
+		echo "##########################"
+		cat live_$domain.txt | aquatone -chrome-path /opt/google/chrome/google-chrome
+
+
+		# Run Gau
+		echo "##########################"
+		echo "	Running Gau		"
+		echo "##########################"
+		cat live_$domain.txt | gau --verbose --threads 10 > gau_$domain.txt
+
+
+		# Run Gf
+		mkdir gf
+
+		echo "##########################"
+		echo "	Running Gf		"
+		echo "##########################"
+		cat gau_$domain.txt | gf xss > gf/xss_$domain.txt
+		cat gau_$domain.txt | gf sqli > gf/sqli_$domain.txt
+		cat gau_$domain.txt | gf lfi > gf/lfi_$domain.txt
+		cat gau_$domain.txt | gf http-auth > gf/http-auth_$domain.txt
+		cat gau_$domain.txt | gf idor > gf/idor_$domain.txt
+		cat gau_$domain.txt | gf img-traversal > gf/img-traversal.$domain.txt
+		cat gau_$domain.txt | gf interestingEXT > gd/interestingEXT_$domain.txt
+		cat gau_$domain.txt | gf interestingparams > gf/interestingparams_$domain.txt
+		cat gau_$domain.txt | gf interestingsubs > gf/interestingsubs_$domain.txt
+		cat gau_$domain.txt | gf php-errors > gf/php-errors_$domain.txt
+		cat gau_$domain.txt | gf php-serialized > gf/php-serialized_$domain.txt
+		cat gau_$domain.txt | gf rce > gf/rce_$domain.txt
+		cat gau_$domain.txt | gf redirect > gf/redirect_$domain.txt
+		cat gau_$domain.txt | gf s3-buckets > gf/s3-buckets_$domain.txt
+		cat gau_$domain.txt | gf sec > gf/sec_$domain.txt
+		cat gau_$domain.txt | gf ssrf > gf/ssrf_$domain.txt
+		cat gau_$domain.txt | gf ssti > gf/ssti_$domain.txt
+	fi
+# Option 2
+else
+    echo -n "[2] - Enter Domain: "
+	read domain
 	
-	cd tools/
+	# Conf. env
+	cd $CAMINHO
+	# Verify Directory
+	filename='$domain'
 
-	# Run tools
-	# Sudomy
-	cd Sudomy/
-	echo "##########################"
-	echo "	Running Sudomy		"
-	echo "##########################"
-	./sudomy -d $domain -o sudomy_$domain
-	cd sudomy_$domain/Sudomy-Output/$domain/
-	mv subdomain.txt ../../../../../$domain/output/
-	echo "[+] Copy file"
+	if [ -d $filename ]; then
+		echo '[+] Existe este diretorio $domain'
+	else
+		echo "##########################"
+		echo "	Created '$domain'	"
+		echo "##########################"
+		mkdir $domain
+		ls -lt | grep $domain
+		cd $domain
+		mkdir output
+		cd ..
+	fi
 
-	cd ../../../../
-
-	#Run ctfr
-	cd ctfr/
-	echo "##########################"
-	echo "	Running ctfr		"
-	echo "##########################"
-	python3 ctfr.py -d $domain -o ctfr_$domain.txt
-	mv ctfr_$domain.txt ../../$domain/output/
-	echo "[+] Copy file"
-	cd ..
-
-	# Run Sublist3r
-	cd Sublist3r
-	echo "##########################"
-	echo "	Running Sublist3r	"
-	echo "##########################"
-	python3 sublist3r.py -d $domain -o sublister_$domain.txt
-	mv sublister_$domain.txt ../../$domain/output/
-	echo "[+] Copy file"
-	cd ..
-
-	# Parse output
-	echo "##########################"
-	echo "	Parsing output files	"
-       	echo "##########################"	
-	cd ..
-	cd $domain
-	cd output
-	
-	cat sublister_$domain.txt | sort | uniq >> tmp_all_$domain.txt
-	cat ctfr_$domain.txt | sort | uniq >> tmp_all_$domain.txt
-	cat subdomain.txt | sort | uniq >> tmp_all_$domain.txt
-	mv tmp_all_$domain.txt all_$domain.txt
+	# Execute tools
 
 	# Run HTTPX
 	echo "##########################"
 	echo "	Running HTTPX		"
 	echo "##########################"
-	cd $CAMINHO
-	cd tools/httpx
-	./httpx -l ../../$domain/output/all_$domain.txt  -sc -timeout 15 -cdn -o sc_live_$domain.txt
-	mv sc_live_$domain.txt ../../$domain/output/
-	./httpx -l ../../$domain/output/all_$domain.txt -timeout 15 -o live_$domain.txt
+	cd $CAMINHO/tools/httpx/
+	./httpx -u $domain -timeout 15 -o live_$domain.txt
 	mv live_$domain.txt ../../$domain/output
 
-	# Remove Temp files
 	cd $CAMINHO
 	cd $domain/output
-
-	rm sublister_$domain.txt
-	rm ctfr_$domain.txt
-	rm subdomain.txt
 
 	# Run aquatone
 	echo "##########################"
@@ -322,17 +393,12 @@ if [ "$option" -eq 1 ]; then
 	echo "##########################"
 	cat live_$domain.txt | aquatone -chrome-path /opt/google/chrome/google-chrome
 
-
-	# Run Gau
 	echo "##########################"
 	echo "	Running Gau		"
 	echo "##########################"
-	cat live_$domain.txt | gau --verbose --threads 10 > gau_$domain.txt
+        cat live_$domain.txt | gau --verbose --threads 10 > gau_$domain.txt
 
-	
-	# Run Gf
-	mkdir gf
-
+    mkdir gf
 	echo "##########################"
 	echo "	Running Gf		"
 	echo "##########################"
@@ -342,7 +408,7 @@ if [ "$option" -eq 1 ]; then
 	cat gau_$domain.txt | gf http-auth > gf/http-auth_$domain.txt
 	cat gau_$domain.txt | gf idor > gf/idor_$domain.txt
 	cat gau_$domain.txt | gf img-traversal > gf/img-traversal.$domain.txt
-	cat gau_$domain.txt | gf interestingEXT > gd/interestingEXT_$domain.txt
+	cat gau_$domain.txt | gf interestingEXT > gf/interestingEXT_$domain.txt
 	cat gau_$domain.txt | gf interestingparams > gf/interestingparams_$domain.txt
 	cat gau_$domain.txt | gf interestingsubs > gf/interestingsubs_$domain.txt
 	cat gau_$domain.txt | gf php-errors > gf/php-errors_$domain.txt
@@ -353,77 +419,6 @@ if [ "$option" -eq 1 ]; then
 	cat gau_$domain.txt | gf sec > gf/sec_$domain.txt
 	cat gau_$domain.txt | gf ssrf > gf/ssrf_$domain.txt
 	cat gau_$domain.txt | gf ssti > gf/ssti_$domain.txt
-
-# Option 2
-else
-    	echo -n "[2] - Enter Domain: "
-    	read domain
-	
-
-	# Conf. env
-    	cd $CAMINHO
-
-    	# Verify Directory
-    	filename='$domain'
-
-    	if [ -d $filename ]; then
-        	echo '[+] Existe este diretorio $domain'
-    	else
-        	echo "##########################"
-        	echo "	Created '$domain'	"
-		echo "##########################"
-        	mkdir $domain
-        	ls -lt | grep $domain
-		cd $domain
-		mkdir output
-		cd ..
-   	fi
-
-	# Execute tools
-	
-	# Run HTTPX
-        echo "##########################"
-        echo "	Running HTTPX		"
-	echo "##########################"
-        cd $CAMINHO/tools/httpx/
-        ./httpx -u $domain -timeout 15 -o live_$domain.txt
-        mv live_$domain.txt ../../$domain/output
-
-        cd $CAMINHO
-        cd $domain/output
-
-        # Run aquatone
-	echo "##########################"
-        echo "	Running Aquatone	"
-	echo "##########################"
-	cat live_$domain.txt | aquatone -chrome-path /opt/google/chrome/google-chrome
-
-	echo "##########################"
-	echo "	Running Gau		"
-	echo "##########################"
-        cat live_$domain.txt | gau --verbose --threads 10 > gau_$domain.txt
-
-        mkdir gf
-	echo "##########################"
-	echo "	Running Gf		"
-	echo "##########################"
-        cat gau_$domain.txt | gf xss > gf/xss_$domain.txt
-        cat gau_$domain.txt | gf sqli > gf/sqli_$domain.txt
-        cat gau_$domain.txt | gf lfi > gf/lfi_$domain.txt
-        cat gau_$domain.txt | gf http-auth > gf/http-auth_$domain.txt
-        cat gau_$domain.txt | gf idor > gf/idor_$domain.txt
-        cat gau_$domain.txt | gf img-traversal > gf/img-traversal.$domain.txt
-        cat gau_$domain.txt | gf interestingEXT > gf/interestingEXT_$domain.txt
-        cat gau_$domain.txt | gf interestingparams > gf/interestingparams_$domain.txt
-        cat gau_$domain.txt | gf interestingsubs > gf/interestingsubs_$domain.txt
-        cat gau_$domain.txt | gf php-errors > gf/php-errors_$domain.txt
-        cat gau_$domain.txt | gf php-serialized > gf/php-serialized_$domain.txt
-        cat gau_$domain.txt | gf rce > gf/rce_$domain.txt
-        cat gau_$domain.txt | gf redirect > gf/redirect_$domain.txt
-        cat gau_$domain.txt | gf s3-buckets > gf/s3-buckets_$domain.txt
-        cat gau_$domain.txt | gf sec > gf/sec_$domain.txt
-        cat gau_$domain.txt | gf ssrf > gf/ssrf_$domain.txt
-        cat gau_$domain.txt | gf ssti > gf/ssti_$domain.txt
 
 	random=date | awk '{print $4}'
 
