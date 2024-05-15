@@ -27,6 +27,7 @@ else
    echo "[-] Nao existe google-chrome"
    cd /home/kali/Download/
    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   apt-get install libu2f-udev -y
    dpkg -i google-chrome-stable_current_amd64.deb
 fi
 
