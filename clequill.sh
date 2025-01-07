@@ -331,7 +331,7 @@ else
 #	echo "	Running WPScan		"
 #	echo "##########################"
 #	#wpscan --update
-#	wpscan --url https://$domain -e at --random-user-agent --api-token LUj8CFzb3m3YffuwsKM1QFoNb5hU2PQOypc8q5V8Xhw  --stealthy  --ignore-main-redirect
+#	wpscan --url https://$domain -e at --random-user-agent --api-token <api-key>  --stealthy  --ignore-main-redirect
 #
 #	echo "##########################"
 #	echo "	Running Nikto		"
